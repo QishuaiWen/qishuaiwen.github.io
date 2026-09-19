@@ -150,3 +150,13 @@ div.lazy {
         transition: none;
     }
 }
+
+body {
+    background-image:
+        linear-gradient(rgba(248, 249, 250, 0.78), rgba(248, 249, 250, 0.88)),
+        url("../images/backgrounds/mountains.jpg") !important;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
