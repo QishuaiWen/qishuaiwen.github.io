@@ -2,7 +2,7 @@
 title: "Towards Interpretable and Efficient Attention: Compressing All by Contracting a Few"
 date: 2025-09-18 00:00:00 +0800
 selected: true
-pub: "The Thirty-Ninth Annual Conference on Neural Information Processing Systems"
+pub: "NeurIPS"
 pub_date: "2025"
 pub_last: ' <span class="badge badge-pill badge-info badge-publication">Spotlight</span>'
 abstract: >-
