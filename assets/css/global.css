@@ -150,7 +150,3 @@ div.lazy {
         transition: none;
     }
 }
-
-body.bg-light {
-    background-color: #233b53 !important;
-}
