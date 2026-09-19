@@ -47,11 +47,12 @@ education:
     B.S. in Artificial Intelligence
   date: Sep. 2020 - Jun. 2024
   
-# experience:
-# - name: Peking University
-#   logo: /assets/images/badges/PKU_red.png
-#   position: Research Intern
-#   date: Sep. 2019 - Jul. 2021
+experience:
+  - name: Amap
+    logo: /assets/images/badges/amap.png
+    dept: Alibaba Group
+    position: Research Intern
+    date: Apr. 2026 - Jul. 2026
 
 awards:
 - name: National Scholarships, China
