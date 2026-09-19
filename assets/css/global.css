@@ -151,3 +151,21 @@ div.lazy {
     }
 }
 
+body.bg-light {
+    background-color: #183b2b !important;
+}
+
+.site-background {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(rgba(10, 40, 28, 0.20), rgba(10, 40, 28, 0.45)),
+        url("/assets/backgrounds/bg1.jpg") center center / cover no-repeat;
+}
+
+body > :not(.site-background) {
+    position: relative;
+    z-index: 1;
+}
