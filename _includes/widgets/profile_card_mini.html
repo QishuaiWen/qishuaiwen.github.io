@@ -66,6 +66,12 @@
                         </a>
                         {% endif %}
 
+                        {% if site.data.profile.kaggle %}
+                        <a class="px-1 no-break" target="_blank" href="https://www.kaggle.com/{{ site.data.profile.kaggle }}" aria-label="Kaggle">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                        {% endif %}
+
                         {% if site.data.profile.twitter %}
                         <a class="px-1 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
                             <i class="fab fa-twitter"></i>
