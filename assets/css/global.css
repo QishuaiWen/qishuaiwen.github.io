@@ -152,5 +152,5 @@ div.lazy {
 }
 
 body.bg-light {
-    background: #183b2b url("../images/backgrounds/bg1.jpg") center center / cover fixed no-repeat !important;
+    background: #183b2b url("../backgrounds/bg1.jpg") center center / cover fixed no-repeat !important;
 }
