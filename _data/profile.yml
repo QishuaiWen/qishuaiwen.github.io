@@ -1,6 +1,6 @@
-primary_name: "Qishuai Wen \\ (闻其帅)"
-# secondary_name: "Wen"
-# navbar_name: "Qishuai Wen"
+primary_name: "Qishuai Wen"
+secondary_name: "(闻其帅)"
+navbar_name: "Qishuai Wen"
 
 positions:
 - name: M.S. Student
