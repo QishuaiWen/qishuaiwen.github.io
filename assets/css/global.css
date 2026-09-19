@@ -155,7 +155,7 @@ body.bg-light {
     min-height: 100vh;
     background-image:
         linear-gradient(rgba(248, 249, 250, 0.78), rgba(248, 249, 250, 0.88)),
-        url("../images/backgrounds/mountains.jpg") !important;
+        url("../images/backgrounds/bg1.jpg") !important;
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
