@@ -152,5 +152,17 @@ div.lazy {
 }
 
 body.bg-light {
-    background-color: #183b2b !important;
+    background-color: #1f4d46 !important;
 }
+
+/* 当前深森林绿 */
+background-color: #183b2b !important;
+
+/* 稍亮的深青绿 */
+background-color: #1f4d46 !important;
+
+/* 学术感深蓝 */
+background-color: #233b53 !important;
+
+/* 冷调深灰蓝 */
+background-color: #2b3a42 !important;
