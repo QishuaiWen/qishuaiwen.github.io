@@ -6,7 +6,7 @@ pub: "Under review at NeurIPS"
 pub_date: "2026"
 abstract: >-
   We introduce a fast-weight perspective that unifies existing efficient attention designs, thereby revealing the limitations of prior methods and addressing them with our proposed Mixture-of-Top-k Attention (MiTA).
-cover: "/assets/images/covers/mita.png"
+cover: "/assets/images/covers/mita.png?v=2"
 authors:
   - Qishuai Wen
   - Zhiyuan Huang
