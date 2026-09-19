@@ -5,7 +5,7 @@ selected: true
 pub: '<span class="badge badge-pill badge-primary badge-publication" style="font-style: normal;">NeurIPS 2025</span>'
 pub_last: ' <span class="badge badge-pill badge-warning badge-publication">Spotlight</span>'
 abstract: >-
-  We propose Contract-and-Broadcast Self-Attention (CBSA), an interpretable and efficient attention mechanism derived by unrolling a unified optimization objective. CBSA contracts input tokens toward a few representative structures and broadcasts the resulting information, achieving linear complexity while unifying a range of existing attention designs.
+  We propose an interpretable and efficient attention mechanism, Contract-and-Broadcast Self-Attention (CBSA), which also unifies a wide range of existing methods, including channel attention, linear attention, and full attention.
 cover: "/assets/images/covers/cbsa.jpg"
 authors:
   - "Qishuai Wen"
