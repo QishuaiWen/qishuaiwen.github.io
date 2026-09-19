@@ -4,7 +4,7 @@ date: 2024-09-25 00:00:00 +0800
 selected: true
 pub: '<span class="badge badge-pill badge-primary badge-publication" style="font-style: normal;">NeurIPS 2024</span>'
 abstract: >-
-  We establish a principled connection between Transformer decoders for semantic segmentation and compression, particularly principal component analysis. Based on this perspective, we derive DEPICT, a white-box fully attentional decoder that is lightweight, interpretable, and robust.
+  We establish connections between compression and semantic segmentation, particularly between principal component analysis and Transformer decoders. Building on this perspective, we derive DEPICT, a white-box, fully attentional decoder that is lightweight, interpretable, and robust.
 cover: "/assets/images/covers/DEPICT.png"
 authors:
   - "Qishuai Wen"
