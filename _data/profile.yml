@@ -1,10 +1,10 @@
-primary_name: "Qishuai (其帅)"
-secondary_name: "Wen"
-navbar_name: "Qishuai Wen"
+primary_name: "Qishuai Wen (闻其帅)"
+# secondary_name: "Wen"
+# navbar_name: "Qishuai Wen"
 
 positions:
-- name: M.S. Student | 硕士研究生
-- name: School of Artificial Intelligence, BUPT | 人工智能学院，北京邮电大学
+- name: M.S. Student
+- name: School of Artificial Intelligence, BUPT
   logo: /assets/images/badges/bupt.png  # Logo is optional
 
 
