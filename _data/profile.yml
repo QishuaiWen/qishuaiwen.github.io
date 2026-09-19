@@ -48,9 +48,9 @@ education:
   date: Sep. 2020 - Jun. 2024
   
 experience:
-  - name: Amap
-    logo: /assets/images/badges/amap.png
-    dept: Alibaba Group
+  - name: Alibaba Group
+    logo: /assets/images/badges/alibaba.png
+    dept: DreamX Team, Amap
     position: Research Intern
     date: Apr. 2026 - Jul. 2026
 
