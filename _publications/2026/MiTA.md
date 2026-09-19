@@ -5,9 +5,8 @@ selected: true
 pub: "Under review at NeurIPS 2026"
 pub_date: "2026"
 abstract: >-
-  We reinterpret standard attention as a scalable fast-weight MLP
-  and develop a unified perspective for efficient attention.
-cover: "/assets/images/covers/mita.jpg"
+  We introduce a fast-weight perspective that unifies existing efficient attention designs, thereby revealing the limitations of prior methods and addressing them with our proposed Mixture-of-Top-k Attention (MiTA).
+cover: "/assets/images/covers/mita.png"
 authors:
   - Qishuai Wen
 links:
