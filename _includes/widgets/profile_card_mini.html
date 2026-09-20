@@ -1,3 +1,6 @@
+{% assign profile_wechat_id = '_SHu4i_' %}
+{% assign profile_wechat_qr = '/assets/images/contact/wechat-qr.jpg' %}
+
 <div class="row sticky-top" style="top: 80px">
     <div class="col">
         <div class="card border-0 shadow-sm bg-white">
@@ -5,13 +8,12 @@
                 <div class="row">
                     <div class="col">
                         {% if site.data.profile.portrait_url %}
-                        <!-- When the screen is wider than md, float the portrait on the right -->
                         <div class="figure d-none d-md-block">
-                            <img 
-                                src="{{ site.data.profile.portrait_url | relative_url }}" 
-                                class="figure-img img-fluid" 
-                                data-toggle="tooltip" 
-                                data-placement="top" 
+                            <img
+                                src="{{ site.data.profile.portrait_url | relative_url }}"
+                                class="figure-img img-fluid"
+                                data-toggle="tooltip"
+                                data-placement="top"
                                 title="{{ site.data.profile.portrait_caption }}">
                         </div>
                         <div class="mb-3 d-md-none text-center">
@@ -59,7 +61,7 @@
                             <i class="fab fa-google-scholar"></i>
                         </a>
                         {% endif %}
-                        
+
                         {% if site.data.profile.github %}
                         <a class="px-1 no-break" target="_blank" href="https://github.com/{{ site.data.profile.github }}">
                             <i class="fab fa-github"></i>
@@ -71,6 +73,15 @@
                             <i class="fab fa-kaggle"></i>
                         </a>
                         {% endif %}
+
+                        <a class="px-1 no-break profile-wechat-link"
+                           href="{{ profile_wechat_qr | relative_url }}"
+                           target="_blank" rel="noopener"
+                           data-toggle="modal" data-target="#profile-wechat-modal"
+                           aria-label="WeChat contact" aria-haspopup="dialog"
+                           aria-controls="profile-wechat-modal" title="WeChat">
+                            <i class="fab fa-weixin" aria-hidden="true"></i>
+                        </a>
 
                         {% if site.data.profile.twitter %}
                         <a class="px-1 no-break" target="_blank" href="https://twitter.com/{{ site.data.profile.twitter }}">
@@ -95,3 +106,195 @@
         </div>
     </div>
 </div>
+
+<style>
+    .profile-wechat-link {
+        display: inline-block;
+        transition: color 0.15s ease;
+    }
+    .profile-wechat-link:hover,
+    .profile-wechat-link:focus {
+        color: #07c160;
+        text-decoration: none;
+    }
+    .profile-wechat-link:focus-visible {
+        outline: 2px solid #07c160;
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+    #profile-wechat-modal .modal-dialog {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 24px);
+    }
+    #profile-wechat-modal .modal-content {
+        border: 0;
+        border-radius: 16px;
+        box-shadow: 0 16px 60px rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+    }
+    #profile-wechat-modal .modal-header {
+        padding: 18px 22px 12px;
+        border-bottom: 0;
+        align-items: center;
+    }
+    #profile-wechat-modal .modal-title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #profile-wechat-modal .modal-title i { color: #07c160; }
+    #profile-wechat-modal .modal-body { padding: 0 22px 20px; }
+    #profile-wechat-modal .profile-wechat-qr {
+        display: block;
+        width: 320px;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 10px;
+    }
+    #profile-wechat-modal .profile-wechat-label {
+        display: block;
+        margin-bottom: 8px;
+        color: #6c757d;
+        font-size: 13px;
+    }
+    #profile-wechat-modal .profile-wechat-copy-row {
+        display: flex;
+        align-items: stretch;
+        border: 1px solid #e2e5e8;
+        border-radius: 9px;
+        background: #f8f9fa;
+        overflow: hidden;
+    }
+    #profile-wechat-id {
+        min-width: 0;
+        flex: 1;
+        width: 100%;
+        padding: 10px 12px;
+        border: 0;
+        background: transparent;
+        color: #212529;
+        font-family: "Source Code Pro", monospace;
+        font-size: 16px;
+        text-align: center;
+    }
+    #profile-wechat-copy {
+        flex-shrink: 0;
+        min-width: 76px;
+        padding: 10px 12px;
+        border: 0;
+        border-left: 1px solid #e2e5e8;
+        background: #fff;
+        color: #087f43;
+        font-size: 14px;
+        cursor: pointer;
+    }
+    #profile-wechat-copy:hover { background: #edf9f2; }
+    #profile-wechat-id:focus-visible,
+    #profile-wechat-copy:focus-visible {
+        outline: 2px solid #07c160;
+        outline-offset: -2px;
+    }
+    #profile-wechat-status {
+        min-height: 20px;
+        margin: 5px 0;
+        font-size: 12px;
+        color: #087f43;
+    }
+    #profile-wechat-note {
+        margin-bottom: 0;
+        color: #6c757d;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .profile-wechat-link { transition: none; }
+    }
+</style>
+
+<div class="modal fade" id="profile-wechat-modal" tabindex="-1"
+     aria-labelledby="profile-wechat-title" aria-describedby="profile-wechat-note"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="profile-wechat-title">
+                    <i class="fab fa-weixin mr-2" aria-hidden="true"></i>WeChat
+                </h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close WeChat dialog">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <img class="profile-wechat-qr"
+                     src="{{ profile_wechat_qr | relative_url }}"
+                     width="888" height="1131" loading="lazy"
+                     alt="Scan in WeChat to add Qishuai Wen ({{ profile_wechat_id | escape }})">
+                <label class="profile-wechat-label" for="profile-wechat-id">WeChat ID</label>
+                <div class="profile-wechat-copy-row">
+                    <input id="profile-wechat-id" type="text" readonly spellcheck="false"
+                           value="{{ profile_wechat_id | escape }}">
+                    <button id="profile-wechat-copy" type="button" aria-label="Copy WeChat ID">Copy</button>
+                </div>
+                <p id="profile-wechat-status" role="status" aria-live="polite"></p>
+                <p id="profile-wechat-note">
+                    Please include your name and a brief introduction.<br>
+                    添加时请备注姓名与来意。
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    function initProfileWeChat() {
+        var modal = document.getElementById('profile-wechat-modal');
+        var input = document.getElementById('profile-wechat-id');
+        var copy = document.getElementById('profile-wechat-copy');
+        var status = document.getElementById('profile-wechat-status');
+        if (!modal || !input || !copy || copy.dataset.ready === 'true') return;
+        copy.dataset.ready = 'true';
+
+        // Keep the modal above the sticky profile card and Bootstrap backdrop.
+        document.body.appendChild(modal);
+
+        function showCopyResult(ok) {
+            copy.disabled = false;
+            copy.textContent = ok ? 'Copied!' : 'Copy';
+            status.textContent = ok ? 'WeChat ID copied.' : 'Please select and copy the ID manually.';
+        }
+        function fallbackCopy() {
+            input.focus();
+            input.select();
+            input.setSelectionRange(0, input.value.length);
+            var ok = false;
+            try { ok = document.execCommand('copy'); } catch (error) { /* Manual selection remains available. */ }
+            showCopyResult(ok);
+            if (ok) copy.focus();
+        }
+        copy.addEventListener('click', function () {
+            copy.disabled = true;
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(input.value).then(function () {
+                    showCopyResult(true);
+                }).catch(fallbackCopy);
+            } else {
+                fallbackCopy();
+            }
+        });
+        if (window.jQuery) {
+            window.jQuery(modal).on('hidden.bs.modal', function () {
+                copy.textContent = 'Copy';
+                copy.disabled = false;
+                status.textContent = '';
+            });
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initProfileWeChat);
+    } else {
+        initProfileWeChat();
+    }
+})();
+</script>
