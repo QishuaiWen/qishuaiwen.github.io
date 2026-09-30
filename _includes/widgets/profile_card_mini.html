@@ -1,5 +1,7 @@
 {% assign profile_wechat_id = '_SHu4i_' %}
 {% assign profile_wechat_qr = '/assets/images/contact/wechat-qr.jpg' %}
+{% assign profile_xiaohongshu_url = 'https://www.xiaohongshu.com/user/profile/5f743c3c000000000100476c' %}
+{% assign profile_xiaohongshu_qr = '/assets/images/contact/xiaohongshu-qr.jpg' %}
 
 <div class="row sticky-top" style="top: 80px">
     <div class="col">
@@ -81,6 +83,15 @@
                            aria-label="WeChat contact" aria-haspopup="dialog"
                            aria-controls="profile-wechat-modal" title="WeChat">
                             <i class="fab fa-weixin" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="px-1 no-break profile-xiaohongshu-link"
+                           href="{{ profile_xiaohongshu_url | escape }}"
+                           target="_blank" rel="noopener"
+                           data-toggle="modal" data-target="#profile-xiaohongshu-modal"
+                           aria-label="Xiaohongshu profile and QR code" aria-haspopup="dialog"
+                           aria-controls="profile-xiaohongshu-modal" title="小红书 · Xiaohongshu">
+                            <span class="profile-xiaohongshu-mark" aria-hidden="true">小红书</span>
                         </a>
 
                         {% if site.data.profile.twitter %}
@@ -295,6 +306,147 @@
         document.addEventListener('DOMContentLoaded', initProfileWeChat);
     } else {
         initProfileWeChat();
+    }
+})();
+</script>
+
+<style>
+    .profile-xiaohongshu-link {
+        display: inline-block;
+        vertical-align: baseline;
+        text-decoration: none;
+    }
+    .profile-xiaohongshu-mark {
+        display: inline-block;
+        padding: 5px 4px;
+        border-radius: 5px;
+        background: #cf1d3e;
+        color: #fff;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+        font-size: 10px;
+        font-weight: 700;
+        line-height: 1;
+        vertical-align: 3px;
+        white-space: nowrap;
+    }
+    .profile-xiaohongshu-link:hover .profile-xiaohongshu-mark,
+    .profile-xiaohongshu-link:focus .profile-xiaohongshu-mark {
+        background: #ae1834;
+    }
+    .profile-xiaohongshu-link:hover,
+    .profile-xiaohongshu-link:focus { text-decoration: none; }
+    .profile-xiaohongshu-link:focus-visible {
+        outline: 2px solid #cf1d3e;
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+    #profile-xiaohongshu-modal .modal-dialog {
+        max-width: 380px;
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 24px);
+    }
+    #profile-xiaohongshu-modal .modal-content {
+        border: 0;
+        border-radius: 16px;
+        box-shadow: 0 16px 60px rgba(0, 0, 0, 0.18);
+        overflow: hidden;
+    }
+    #profile-xiaohongshu-modal .modal-header {
+        padding: 18px 22px 12px;
+        border-bottom: 0;
+        align-items: center;
+    }
+    #profile-xiaohongshu-modal .modal-title {
+        font-size: 20px;
+        font-weight: 700;
+    }
+    #profile-xiaohongshu-modal .profile-xiaohongshu-subtitle {
+        margin-left: 6px;
+        color: #6c757d;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    #profile-xiaohongshu-modal .modal-body { padding: 0 22px 22px; }
+    #profile-xiaohongshu-modal .profile-xiaohongshu-qr {
+        display: block;
+        width: 320px;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 12px;
+    }
+    #profile-xiaohongshu-note {
+        margin: 0 0 14px;
+        color: #6c757d;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+    #profile-xiaohongshu-modal .profile-xiaohongshu-open {
+        display: block;
+        padding: 10px 14px;
+        border: 1px solid #cf1d3e;
+        border-radius: 9px;
+        background: #cf1d3e;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.5;
+        text-decoration: none;
+    }
+    #profile-xiaohongshu-modal .profile-xiaohongshu-open:hover {
+        border-color: #ae1834;
+        background: #ae1834;
+    }
+    #profile-xiaohongshu-modal .profile-xiaohongshu-open:focus-visible {
+        outline: 2px solid #cf1d3e;
+        outline-offset: 3px;
+    }
+</style>
+
+<div class="modal fade" id="profile-xiaohongshu-modal" tabindex="-1"
+     aria-labelledby="profile-xiaohongshu-title" aria-describedby="profile-xiaohongshu-note"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="profile-xiaohongshu-title">
+                    小红书<span class="profile-xiaohongshu-subtitle">Xiaohongshu</span>
+                </h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close Xiaohongshu dialog">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <img class="profile-xiaohongshu-qr"
+                     src="{{ profile_xiaohongshu_qr | relative_url }}"
+                     width="987" height="1347" loading="lazy"
+                     alt="Scan with Xiaohongshu to visit Qishuai Wen's profile">
+                <p id="profile-xiaohongshu-note">
+                    Scan with Xiaohongshu, or open my profile below.
+                </p>
+                <a class="profile-xiaohongshu-open"
+                   href="{{ profile_xiaohongshu_url | escape }}"
+                   target="_blank" rel="noopener">
+                    Open profile <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+    function initProfileXiaohongshu() {
+        var modal = document.getElementById('profile-xiaohongshu-modal');
+        // Place it outside the sticky card's stacking context, like the WeChat modal.
+        if (modal && modal.parentNode !== document.body) {
+            document.body.appendChild(modal);
+        }
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initProfileXiaohongshu);
+    } else {
+        initProfileXiaohongshu();
     }
 })();
 </script>
