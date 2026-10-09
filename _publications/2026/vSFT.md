@@ -1,10 +1,10 @@
 ---
-title: "vSFT: Learning to Verbally Tune Agents in a Self-Improvement Loop"
+title: "vSFT: Learning to Verbally Tune Agents at Test Time"
 date: 2026-09-25 00:01:00 +0800
 selected: true
 pub: '<span class="badge badge-pill badge-secondary badge-publication" style="font-style: normal;">Under review at ICLR 026</span>'
 abstract: >-
-  We propose a learnable framework, vSFT, that provides an effective mechanism for agent self-improvement by using a trained hypernetwork to internalize verbal feedback from a supervisor.
+  We propose vSFT, a test-time adaptation method for agents that provides a learnable, effective self-improvement mechanism by iteratively internalizing verbal feedback in a closed loop.
 cover: "/assets/images/covers/vSFT.png"
 authors:
   - Qishuai Wen
