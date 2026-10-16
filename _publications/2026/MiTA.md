@@ -13,6 +13,6 @@ authors:
   - Wei He
   - Chun-Guang Li
 links:
-  arXiv: "https://arxiv.org/abs/2602.01219"
+  Paper: "https://arxiv.org/abs/2602.01219"
   Code: "https://github.com/QishuaiWen/MiTA"
 ---
