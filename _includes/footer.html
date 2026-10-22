@@ -13,9 +13,47 @@
             </div>
         </div>
     </div>
-    {% unless page.url == "/" or page.url == "/index.html" %}
-    <div style="max-width: 360px; margin: 24px auto; padding: 0 12px;">
-        <script src="https://statable.com/js/r2V49BF0cf/t/mw.js" data-id="3437672" data-theme="light" data-primary-color="#007BFF" data-ocean-color="#FFFFFF"></script>
+    <!-- Mobile destination, also used on pages without a profile sidebar. -->
+    <div id="statable-footer-slot"
+         style="max-width: 360px; margin: 24px auto; padding: 0 12px;">
+        <div id="statable-visitor-widget"
+             class="card border-0 shadow-sm bg-white"
+             aria-label="Visitor map">
+            <div class="p-2" style="width: 100%; min-width: 0;">
+                <script src="https://statable.com/js/r2V49BF0cf/t/mw.js"
+                        data-id="3437672"
+                        data-theme="light"
+                        data-primary-color="#007BFF"
+                        data-ocean-color="#FFFFFF"></script>
+            </div>
+        </div>
     </div>
-    {% endunless %}
 </footer>
+
+<script>
+(function () {
+    var widget = document.getElementById('statable-visitor-widget');
+    var sidebarSlot = document.getElementById('statable-sidebar-slot');
+    var footerSlot = document.getElementById('statable-footer-slot');
+    if (!widget || !footerSlot) return;
+
+    // Match the existing Bootstrap col-md layout breakpoint.
+    var desktop = window.matchMedia('(min-width: 768px)');
+
+    function placeVisitorMap() {
+        var useSidebar = Boolean(sidebarSlot && desktop.matches);
+        var destination = useSidebar ? sidebarSlot : footerSlot;
+        if (widget.parentNode !== destination) {
+            destination.appendChild(widget);
+        }
+        footerSlot.hidden = useSidebar;
+    }
+
+    placeVisitorMap();
+    if (typeof desktop.addEventListener === 'function') {
+        desktop.addEventListener('change', placeVisitorMap);
+    } else {
+        desktop.addListener(placeVisitorMap);
+    }
+})();
+</script>

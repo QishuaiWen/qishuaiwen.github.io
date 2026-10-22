@@ -121,16 +121,8 @@
         </div>
 
         {% if page.url == "/" or page.url == "/index.html" %}
-        <!-- Visitor map: below the profile card, inside the same sticky sidebar. -->
-        <div class="card border-0 shadow-sm bg-white mt-3" aria-label="Visitor map">
-            <div class="p-2" style="width: 100%; min-width: 0;">
-                <script src="https://statable.com/js/r2V49BF0cf/t/mw.js"
-                        data-id="3437672"
-                        data-theme="light"
-                        data-primary-color="#007BFF"
-                        data-ocean-color="#FFFFFF"></script>
-            </div>
-        </div>
+        <!-- Desktop destination; the single widget is created in footer.html. -->
+        <div id="statable-sidebar-slot" class="d-none d-md-block mt-3"></div>
         {% endif %}
     </div>
 </div>
